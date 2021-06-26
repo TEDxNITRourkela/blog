@@ -18,9 +18,7 @@ module.exports = {
     author: {
       name: config.author,
       minibio: `
-        <strong>egghead</strong> is the premier place on the internet for 
-        experienced developers to enhance their skills and stay current
-        in the fast-faced field of web development.
+        <strong>TEDxNITRourkela</strong> is an independently organised TED Event by a group of passionate students of National Institute of Technology Rourkela, India.
       `,
     },
     organization: {
@@ -88,7 +86,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `GOOGLE_ID`,
+        trackingId: `UA-187973769-1`,
       },
     },
     {
@@ -128,7 +126,7 @@ module.exports = {
                   edges {
                     node {
                       excerpt(pruneLength: 250)
-                      fields { 
+                      fields {
                         slug
                         date
                       }
