@@ -35,8 +35,7 @@ const ThemeToggler = ({ toggleTheme, themeName }) => {
         borderWidth: '1px',
         color: theme.colors.white,
         background: theme.colors.headerBg,
-        transition: 'background 500ms ease',
-        transition: 'color 500ms ease',
+        transition: 'all 500ms ease',
         '@media (hover: hover)': {
           ':hover': {
             background:
