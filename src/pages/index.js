@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -49,6 +50,65 @@ const Hero = () => {
   )
 }
 
+const Article = ({ post }) => {
+  const theme = useTheme()
+  return (
+    <div
+      css={css({
+        marginBottom: '40px',
+        borderRadius: '7px',
+        padding: '0px',
+        background: theme.colors.imageBg,
+      })}
+    >
+      {post?.frontmatter?.banner && (
+        <Link
+          aria-label={`View ${post.frontmatter.title} article`}
+          to={`/${post.fields.slug}`}
+        >
+          <Img
+            style={{
+              width: '100%',
+              height: '180px',
+              objectFit: 'center',
+            }}
+            sizes={post.frontmatter.banner.childImageSharp.fluid}
+          />
+        </Link>
+      )}
+
+      <div style={{ padding: '20px 25px' }}>
+        <h2
+          css={{
+            marginBottom: rhythm(0.3),
+            marginTop: '0px',
+            transition: 'all 150ms ease',
+            ':hover': {
+              color: theme.colors.primary,
+            },
+          }}
+        >
+          <Link
+            to={post.frontmatter.slug}
+            aria-label={`View ${post.frontmatter.title}`}
+          >
+            {post.frontmatter.title}
+          </Link>
+        </h2>
+        <Description>
+          {post.excerpt}{' '}
+          <Link
+            to={post.frontmatter.slug}
+            aria-label={`View ${post.frontmatter.title}`}
+          >
+            Read Article →
+          </Link>
+        </Description>
+      </div>
+    </div>
+  )
+}
+
 const Description = styled.p`
   margin-bottom: 10px;
   display: inline-block;
@@ -57,7 +117,7 @@ const Description = styled.p`
 export default function Index({ data: { site, allMdx } }) {
   const theme = useTheme()
   return (
-    <Layout site={site}>
+    <Layout site={site} noSubscribeForm>
       <Hero />
       <Container
         css={css`
@@ -65,38 +125,7 @@ export default function Index({ data: { site, allMdx } }) {
         `}
       >
         {allMdx.edges.map(({ node: post }) => (
-          <div
-            key={post.id}
-            css={css`
-              margin-bottom: 40px;
-            `}
-          >
-            <h2
-              css={css({
-                marginBottom: rhythm(0.3),
-                transition: 'all 150ms ease',
-                ':hover': {
-                  color: theme.colors.primary,
-                },
-              })}
-            >
-              <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
-              >
-                {post.frontmatter.title}
-              </Link>
-            </h2>
-            <Description>
-              {post.excerpt}{' '}
-              <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
-              >
-                Read Article →
-              </Link>
-            </Description>
-          </div>
+          <Article key={post.id} post={post} />
         ))}
         <Link to="/blog" aria-label="Visit blog page">
           View all articles
@@ -140,8 +169,8 @@ export const pageQuery = graphql`
             description
             banner {
               childImageSharp {
-                sizes(maxWidth: 720) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
