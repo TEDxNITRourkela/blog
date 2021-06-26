@@ -1,9 +1,9 @@
 {
   "env": {
-    "GOOGLE_ANALYTICS": "GA_GOES_HERE",
+    "GOOGLE_ANALYTICS": "UA-187973769-1",
     "NODE_ENV": "production"
   },
-  "alias": "DOMAIN_GOES_HERE",
+  "alias": "blog.tedxnitrourkela.com",
   "scale": {
     "sfo1": {
       "min": 1,

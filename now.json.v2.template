@@ -1,10 +1,10 @@
 {
   "env": {
     "NODE_ENV": "production",
-    "GOOGLE_ANALYTICS": "GA_GOES_HERE"
+    "GOOGLE_ANALYTICS": "UA-187973769-1"
   },
   "name": "PROJECT_NAME",
-  "alias": ["DOMAIN_NAME", "www.DOMAIN_NAME"],
+  "alias": ["blog.tedxnitrourkela.com", "www.blog.tedxnitrourkela.com"],
   "version": 2,
   "regions": ["sfo1", "gru1", "bru1"],
   "builds": [

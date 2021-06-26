@@ -35,21 +35,24 @@ const ThemeToggler = ({ toggleTheme, themeName }) => {
         borderWidth: '1px',
         color: theme.colors.white,
         background: theme.colors.headerBg,
+        transition: 'background 500ms ease',
+        transition: 'color 500ms ease',
         '@media (hover: hover)': {
           ':hover': {
             background:
               theme.themeName === 'default'
                 ? theme.colors.text
-                : theme.colors.primary,
+                : theme.colors.gray,
+            color: theme.colors.headerBg,
           },
         },
       }}
       aria-label={
-        themeName === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        themeName === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
       }
-      onClick={() => toggleTheme(themeName === 'dark' ? 'default' : 'dark')}
+      onClick={() => toggleTheme(themeName === 'light' ? 'default' : 'light')}
     >
-      {themeName === 'dark' ? (
+      {themeName === 'light' ? (
         <DefaultMode title="Switch to light mode" />
       ) : (
         <DarkMode title="Switch to dark mode" />
