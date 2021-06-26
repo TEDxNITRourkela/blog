@@ -1,9 +1,32 @@
 {
-  "name": "gatsby-starter-egghead-blog",
-  "description": "This is a starter for egghead content creator blogs",
+  "name": "tedxnitrourkela-blog",
+  "description": "This is the repository of the official blog of TEDxNITRourkela",
   "version": "1.0.0",
-  "author": "egghead.io <support@egghead.io> (https://egghead.io)",
-  "repository": "https://github.com/eggheadio/gatsby-starter-egghead-blog",
+  "author": "TEDxNITRourkela",
+  "license": "MIT",
+  "main": "n/a",
+  "keywords": [
+    "tedx",
+    "tedxnitrourkela",
+    "blog",
+    "nitrourkela",
+    "gatsby",
+    "react",
+    "emotion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TEDxNITRourkela/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TEDxNITRourkela/blog.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "serve public/",
+    "now-build": "npm run build"
+  },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.5",
     "@emotion/core": "^10.0.22",
@@ -59,16 +82,5 @@
   "devDependencies": {
     "babel-preset-gatsby": "^0.2.20",
     "prettier": "1.18.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "serve public/",
-    "now-build": "npm run build"
   }
 }
