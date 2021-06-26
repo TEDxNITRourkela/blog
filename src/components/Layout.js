@@ -18,6 +18,7 @@ const getGlobalStyles = theme => {
     body {
       background: ${theme.colors.bodyBg};
       color: ${theme.colors.text};
+      transition: background 200ms ease-out;
     }
     &::selection {
       color: ${theme.colors.white};
@@ -107,6 +108,7 @@ const getGlobalStyles = theme => {
     }
     pre {
       background-color: #061526 !important;
+      transition: background 200ms ease-out;
       border-radius: 4px;
       font-size: 16px;
       padding: 10px;

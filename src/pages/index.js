@@ -16,7 +16,12 @@ const Hero = () => {
       css={css`
         color: ${theme.colors.white};
         width: 100%;
+        background: linear-gradient(
+          ${theme.colors.primary},
+          ${theme.colors.bodyBg}
+        );
         background: ${theme.colors.primary};
+        transition: background 200ms ease-out;
         padding: 20px 0 30px 0;
         display: flex;
       `}
@@ -59,6 +64,7 @@ const Article = ({ post }) => {
         borderRadius: '7px',
         padding: '0px',
         background: theme.colors.imageBg,
+        transition: 'background 200ms ease-out',
       })}
     >
       {post?.frontmatter?.banner && (
@@ -115,7 +121,6 @@ const Description = styled.p`
 `
 
 export default function Index({ data: { site, allMdx } }) {
-  const theme = useTheme()
   return (
     <Layout site={site} noSubscribeForm>
       <Hero />

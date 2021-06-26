@@ -6,11 +6,11 @@ const themes = {
   default: {
     themeName: 'default',
     colors: {
-      primary: darken(0.06, colors.red),
+      primary: darken(0.03, colors.red),
       text: colors.white,
       bodyBg: colors.black,
-      headerBg: darken(0.06, colors.red),
-      link: darken(0.06, colors.red),
+      headerBg: darken(0.03, colors.red),
+      link: darken(0.03, colors.red),
       imageBg: colors.darkGray,
       ...colors,
     },
