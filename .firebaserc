@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "tedx-nitrourkela"
+  },
+  "targets": {
+    "tedx-nitrourkela": {
+      "hosting": {
+        "blog": [
+          "tedxnitrourkela-blog"
+        ]
+      }
+    }
+  }
+}
